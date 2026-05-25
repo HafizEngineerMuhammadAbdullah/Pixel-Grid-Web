@@ -1,0 +1,474 @@
+/* Reset Default Space */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* for Body */
+body {
+  /* background:#0b1120; */
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* for Container */
+div.container {
+  min-height: 100vh;
+  display: grid;
+  /* grid-template-columns: 250px 1fr; */
+  grid-template-columns: var(--sidebar-width, 250px) 1fr;
+  grid-template-rows: 75px auto;
+}
+/* for header */
+header {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+/* for main */
+main {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+/* for Side-Bar */
+aside#side-bar {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  background-color: #0f172a;
+  /* hide text that overflows when collapsed */
+  overflow: hidden;
+  transition:
+    width 0.35s ease,
+    padding 0.35s ease;
+}
+/* When SideBar is in Collapsed State */
+#side-bar.collapsed {
+  /* just enough for icons */
+  width: 52px;
+  padding: 16px 8px;
+}
+/* Hide text labels when collapsed */
+#side-bar.collapsed span {
+  opacity: 0; /* invisible */
+  pointer-events: none; /* not clickable */
+  transition: opacity 0.2s;
+}
+/* Show text when open */
+#side-bar span {
+  opacity: 1;
+  white-space: nowrap; /* prevent text wrapping during animation */
+  transition: opacity 0.2s;
+}
+/* for Pixel Grid */
+div.pixel-grid {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0px 20px 10px;
+}
+div.pixel-grid h3 {
+  color: white;
+  font-size: 20px;
+}
+/* for Pixel Grid Icon */
+div.pixel-grid .pixel-grid-icon {
+  width: 38px;
+  height: 38px;
+  background-color: #818df8c2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 11px;
+}
+
+div.pixel-grid i {
+  font-size: 24px;
+  color: white;
+  flex-shrink: 0; /* icon never shrinks */
+}
+
+/* for Dashboard Section */
+section.dashboard {
+  padding: 20px 17px 20px 10px;
+}
+
+section#dashboard {
+  border: 0.5px solid rgba(255, 255, 255, 0.171);
+  border-left: 0.5px solid transparent;
+  border-right: 0.5px solid transparent;
+}
+
+section.dashboard ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+section.dashboard ul li {
+  color: rgba(240, 238, 238, 0.671);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-left: 10px;
+  column-gap: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+section.dashboard ul li i {
+  font-size: 18px;
+  /* icon never shrinks */
+  flex-shrink: 0;
+}
+section.dashboard ul li.dashboard-list {
+  background-color: #414a9bc2;
+  border-radius: 8px;
+}
+section.dashboard ul li:hover {
+  color: white;
+  border-radius: 8px;
+  background-color: #cfcddd48;
+}
+section.dashboard ul li.dashboard-list:hover {
+  background-color: #414a9bc2;
+  border-radius: 8px;
+}
+/* for Settings Section */
+section.settings h4 {
+  text-transform: uppercase;
+  color: rgba(240, 238, 238, 0.521);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+/* for NavBar */
+nav#navbar {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgba(15, 23, 42, 0.7); */
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.171);
+}
+/* for Left Side
+& Right Side */
+nav#navbar div.nav-left-side,
+nav#navbar div.nav-right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+/* for Div Icons */
+button.list-icon,
+div.magnifying-glass-icon,
+div.notification-icon,
+div.profile-icon {
+  width: 38px;
+  height: 38px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(63, 33, 33, 0.301);
+  border-radius: 11px;
+  transition: background-color 0.3s;
+}
+/* for hover */
+button.list-icon:hover,
+div.magnifying-glass-icon:hover,
+div.notification-icon:hover,
+div.profile-icon:hover {
+  background-color: #000;
+  cursor: pointer;
+}
+/* for icons */
+button.list-icon i,
+div.magnifying-glass-icon i,
+div.notification-icon i,
+div.profile-icon i {
+  font-size: 20px;
+  color: rgb(168, 167, 167);
+}
+/* for Dashboard heading */
+div.dashboard-heading h2 {
+  font-size: 22px;
+  color: rgba(155, 142, 142, 0.493);
+}
+/* for Content Area */
+div.content-area {
+  grid-row: 2 / 6;
+  grid-column: 2 / 3;
+
+  padding: 20px;
+
+  display: grid;
+  grid-template-rows: 350px 200px auto auto;
+  gap: 20px;
+}
+/* for Banner Section */
+section#banner-section {
+  /* grid-row: 2/3;
+  grid-column: 2/3; */
+  /* height: 100%;/ */
+}
+/* for header */
+div.header {
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)),
+    url("./assets/banner.jpg") no-repeat center center/cover;
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+/* for Heading header */
+div.header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+  background: linear-gradient(to right, rgb(255, 0, 0), blue, rgba(7, 198, 231, 0.671), rgb(223, 6, 223));
+  /* background: linear-gradient(
+  to right,
+  #818cf8,
+  #22d3ee
+); */
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+/* for Paragraph header */
+div.header p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+/* for header button */
+div.btn button {
+  margin-top: 40px;
+  padding: 12px 22px;
+  font-size: 15px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #818df8c2;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);
+  transition: all 0.3s ease;
+}
+
+div.btn button:hover {
+  transform: translateY(-2px);
+  background-color: #818df8;
+  cursor: pointer;
+}
+/* Static Card Section */
+section#stat-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-content: center;
+  gap: 20px;
+}
+
+/* for Individual Stat Card */
+section#stat-cards .stats-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  /* background-color: #1e293b, */
+  background:
+    linear-gradient(#1e293b, #1e293b) padding-box,
+    linear-gradient(
+        45deg,
+        rgba(53, 165, 156, 0.904),
+        rgb(14, 124, 228),
+        rgb(29, 139, 212)
+      )
+      border-box;
+  /* background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08); */
+  /* border: 2px solid transparent; */
+  border-radius: 12px;
+  height: 150px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* for hovering on Card */
+section#stat-cards .stats-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(28, 31, 216, 0.5);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+  cursor: pointer;
+}
+
+.stats-card h3 {
+  font-size: 17px;
+  font-weight: 500;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+  background: linear-gradient(
+    to right,
+    rgb(5, 247, 214),
+    rgb(218, 45, 131),
+    rgb(149, 10, 184)
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.stats-card .stat-val {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "DM Serif Display", serif;
+}
+p.state-change-up {
+  font-size: 14px;
+  color: rgba(82, 245, 7, 0.7);
+}
+p.state-change-down {
+  font-size: 14px;
+  color: rgb(240, 8, 8);
+}
+p.state-change-up i {
+  font-size: 16px;
+  margin-right: 3px;
+  color: rgba(98, 206, 10, 0.7);
+}
+p.state-change-down i {
+  font-size: 16px;
+  margin-right: 3px;
+  color: rgba(248, 16, 8, 0.7);
+}
+/* Image Cards Section */
+section.img-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+}
+/* for Individual Image Card */
+section.img-cards .image-card {
+  height: 100%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+/* for Hovering on Image Card */
+section.img-cards .image-card:hover {
+  transform: translateY(-7px);
+}
+/* for Image in Image Card */
+section.img-cards .image-card > div:first-child {
+  height: 180px;
+  width: 100%;
+}
+/* for Image 1, Image 2 and Image 3 */
+div.image-card div.img1 {
+  background: url("./assets/img1.jpg") no-repeat center center/cover;
+}
+div.image-card div.img2 {
+  background: url("./assets/img2.jpg") no-repeat center center/cover;
+}
+div.image-card div.img3 {
+  background: url("./assets/img3.avif") no-repeat center center/cover;
+}
+/* for Image Hover Effect in Image Card */
+.image-card .img1,
+.image-card .img2,
+.image-card .img3 {
+  transition: transform 0.4s ease;
+}
+
+.image-card:hover .img1,
+.image-card:hover .img2,
+.image-card:hover .img3 {
+  transform: scale(1.05);
+}
+/* for Card Body in Image Card */
+section.img-cards .image-card .card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  white-space: nowrap;
+  /* background-color: #111; */
+  background: #172033;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* for Card Body Heading in Image Card */
+div.card-body h4 {
+  color: rgba(255, 255, 255, 0.8);
+}
+div.card-body-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.card-body-footer p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+/* for Card Footer in Image Card */
+div.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* for Tags in Card Footer */
+.tag {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* for Nature Tag in Card Footer */
+div.card-footer .tag-nature {
+  background: rgba(34,197,94,0.15);
+  color: #4ade80;
+}
+
+div.card-footer .tag-urban {
+  background: rgba(168,85,247,0.15);
+  color: #c084fc;
+}
+div.card-footer .tag-travel {
+  background-color: #a3769dc2;
+  color: #690648;
+}
+div.card-footer .tag-beach {
+  background-color: #678bbbc2;
+  color: #042a64;
+}
+div.card-footer .tag-life-style {
+  background-color: #bb6795c2;
+  color: #7b089e;
+}
+button.like-btn,
+button.download-btn {
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* Active class */
+.active {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}

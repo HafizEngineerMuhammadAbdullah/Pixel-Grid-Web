@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Grid Based Layout</title>
+    <!-- Link StyleSheet -->
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <!-- CDN Tabler Link  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- DM Serif Dislay -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Container -->
+    <div class="container">
+        <!-- Side-Bar -->
+        <aside id="side-bar">
+            <div class="pixel-grid">
+                <div class="pixel-grid-icon"><i class="ti ti-bolt"></i></div>
+                <h3>PixelGrid</h3>
+            </div>
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="dashboard">
+                <ul>
+                    <li class="dashboard-list"><i class="ti ti-layout-dashboard"
+                            style="color:rgb(84, 149, 233);"></i><span>Dashboard</span></li>
+                    <li><i class="ti ti-photo"></i><span>Gallery</span></li>
+                    <li><i class="ti ti-heart"></i><span>Favourite</span></li>
+                    <li><i class="ti ti-folder"></i><span>Collections</span></li>
+                </ul>
+            </section>
+            <!-- Settings Section -->
+            <section class="dashboard settings">
+                <h4>Settings</h4>
+                <ul>
+                    <li><i class="ti ti-user"></i><span>Profile</span></li>
+                    <li><i class="ti ti-settings"></i><span>Preferences</span></li>
+                    <li><i class="ti ti-bell"></i><span>Notifications</span></li>
+                </ul>
+            </section>
+        </aside>
+        <!-- Header -->
+        <header>
+            <!-- NavBar -->
+            <nav id="navbar">
+                <!-- Left Side -->
+                <div class="nav-left-side">
+                    <button class="list-icon" id="toggle-btn">
+                        <i class="ti ti-menu-2"></i>
+                    </button>
+                    <div class="dashboard-heading">
+                        <h2>Dashboard</h2>
+                    </div>
+                </div>
+                <!-- Right Side -->
+                <div class="nav-right-side">
+                    <!-- Magnifying Glass Icon -->
+                    <div class="magnifying-glass-icon">
+                        <i class="ti ti-search"></i>
+                    </div>
+                    <!-- Notification Icon -->
+                    <div class="notification-icon">
+                        <i class="ti ti-bell"></i>
+                    </div>
+                    <!-- Profile Icon -->
+                    <div class="profile-icon">
+                        <i class="ti ti-user"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Main Section -->
+        <main>
+            <!-- Main Content Area -->
+            <div class="content-area">
+                <!-- Banner Section -->
+                <section id="banner-section">
+                    <!-- Header -->
+                    <div class="header">
+                        <h1>Welcome to PixelGrid</h1>
+                        <p>Discover a world of stunning images and creative inspiration.</p>
+                        <div class="btn">
+                            <button><i class="ti ti-arrow-right"></i>View Profile</button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Static Cards Section -->
+                <section id="stat-cards">
+                    <div class="stats-card">
+                        <h3>Total Photos</h3>
+                        <p class="stat-val">1,250</p>
+                        <p class="state-change-up"><i class="ti ti-trending-up"></i>+12%</p>
+                    </div>
+                    <div class="stats-card">
+                        <h3>Collections</h3>
+                        <p class="stat-val">320</p>
+                        <p class="state-change-up"><i class="ti ti-trending-up"></i>+4</p>
+                    </div>
+                    <div class="stats-card">
+                        <h3>Storage Used</h3>
+                        <p class="stat-val">6.2GB</p>
+                        <p class="state-change-down"><i class="ti ti-trending-down"></i>62%</p>
+                    </div>
+                </section>
+                <!-- Image Cards Section 1 -->
+                <section class="img-cards">
+                    <!-- Image Card -->
+                    <div class="image-card">
+                        <div class="img1">
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <h4>Sunset Over the Mountains</h4>
+                            <!-- Card Body footer -->
+                            <div class="card-body-footer">
+                                <p class="space">• 3.2MB</p>
+                                <p class="time">• 2 days ago</p>
+                            </div>
+                            <!-- Card Footer -->
+                            <div class="card-footer">
+                                <div class="tag tag-nature">Nature</div>
+                                <button class="like-btn"><i class="ti ti-heart"></i>Like</button>
+                                <button class="download-btn"><i class="ti ti-download"></i>Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <div class="img2">
+                        </div>
+                        <div class="card-body">
+                            <h4>City at night</h4>
+                            <div class="card-body-footer">
+                                <p class="space">• 5.1MB</p>
+                                <p class="time">• 3 days ago</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tag tag-urban">Urban</div>
+                                <button class="like-btn"><i class="ti ti-heart"></i>Like</button>
+                                <button class="download-btn"><i class="ti ti-download"></i>Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <div class="img3">
+                        </div>
+                        <div class="card-body">
+                            <h4>Forest Trail</h4>
+                            <div class="card-body-footer">
+                                <p class="space">• 2.8MB</p>
+                                <p class="time">• 5 days ago</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tag tag-nature">Nature</div>
+                                <button class="like-btn"><i class="ti ti-heart"></i>Like</button>
+                                <button class="download-btn"><i class="ti ti-download"></i>Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Image Card Section 2 -->
+                <section class="img-cards">
+                    <!-- Image Card -->
+                    <div class="image-card">
+                        <div class="img1">
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <h4>Desert Sunset</h4>
+                            <!-- Card Body footer -->
+                            <div class="card-body-footer">
+                                <p class="space">• 8.4MB</p>
+                                <p class="time">• 1 week ago</p>
+                            </div>
+                            <!-- Card Footer -->
+                            <div class="card-footer">
+                                <div class="tag tag-travel">Travel</div>
+                                <button class="like-btn"><i class="ti ti-heart"></i>Like</button>
+                                <button class="download-btn"><i class="ti ti-download"></i>Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <div class="img2">
+                        </div>
+                        <div class="card-body">
+                            <h4>Ocean Waves</h4>
+                            <div class="card-body-footer">
+                                <p class="space">• 4.0MB</p>
+                                <p class="time">• 2 weeks ago</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tag tag-beach">Beach</div>
+                                <button class="like-btn"><i class="ti ti-heart"></i>Like</button>
+                                <button class="download-btn"><i class="ti ti-download"></i>Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <div class="img3">
+                        </div>
+                        <div class="card-body">
+                            <h4>Morning Cafe</h4>
+                            <div class="card-body-footer">
+                                <p class="space">• 1.9MB</p>
+                                <p class="time">• 5 weeks ago</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="tag tag-life-style">LifeStyle</div>
+                                <button class="like-btn"><i class="ti ti-heart"></i>Like</button>
+                                <button class="download-btn"><i class="ti ti-download"></i>Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
