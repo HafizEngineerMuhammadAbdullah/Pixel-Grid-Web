@@ -7,6 +7,7 @@
     <title>My Grid Based Layout</title>
     <!-- Link StyleSheet -->
     <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="stylesheet" href="./responsive.css" />
     <!-- CDN Tabler Link  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
     <!-- Poppins Font -->
@@ -27,7 +28,7 @@
         <aside id="side-bar">
             <div class="pixel-grid">
                 <div class="pixel-grid-icon"><i class="ti ti-bolt"></i></div>
-                <h3>PixelGrid</h3>
+                <h3><span>PixelGrid</span></h3>
             </div>
             <!-- Dashboard Section -->
             <section id="dashboard" class="dashboard">
@@ -41,7 +42,7 @@
             </section>
             <!-- Settings Section -->
             <section class="dashboard settings">
-                <h4>Settings</h4>
+                <h4><span>Settings</span></h4>
                 <ul>
                     <li><i class="ti ti-user"></i><span>Profile</span></li>
                     <li><i class="ti ti-settings"></i><span>Preferences</span></li>
@@ -64,6 +65,9 @@
                 </div>
                 <!-- Right Side -->
                 <div class="nav-right-side">
+                    <button class="toggle-btn">
+                        <i class="ti ti-sun-high"></i>
+                    </button>
                     <!-- Magnifying Glass Icon -->
                     <div class="magnifying-glass-icon">
                         <i class="ti ti-search"></i>
@@ -171,7 +175,7 @@
                 <section class="img-cards">
                     <!-- Image Card -->
                     <div class="image-card">
-                        <div class="img1">
+                        <div class="img4">
                         </div>
                         <!-- Card Body -->
                         <div class="card-body">
@@ -190,7 +194,7 @@
                         </div>
                     </div>
                     <div class="image-card">
-                        <div class="img2">
+                        <div class="img5">
                         </div>
                         <div class="card-body">
                             <h4>Ocean Waves</h4>
@@ -206,7 +210,7 @@
                         </div>
                     </div>
                     <div class="image-card">
-                        <div class="img3">
+                        <div class="img6">
                         </div>
                         <div class="card-body">
                             <h4>Morning Cafe</h4>
@@ -224,6 +228,9 @@
                 </section>
             </div>
         </main>
+        <footer>
+            <p>&copy; 2026 PixelGrid. All rights reserved.</p>
+        </footer>
 
     </div>
     <script src="./main.js"></script>

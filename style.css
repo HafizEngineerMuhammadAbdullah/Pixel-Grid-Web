@@ -7,7 +7,7 @@
 }
 /* for Body */
 body {
-  /* background:#0b1120; */
+  background:#0b1120;
   background: var(--bg-main);
   color: var(--text-main);
 }
@@ -16,10 +16,10 @@ body {
 div.container {
   min-height: 100vh;
   display: grid;
-  /* grid-template-columns: 250px 1fr; */
   grid-template-columns: var(--sidebar-width, 250px) 1fr;
-  grid-template-rows: 75px auto;
+  grid-template-rows: 75px 1fr auto;
 }
+
 /* for header */
 header {
   grid-column: 2 / 3;
@@ -37,21 +37,30 @@ aside#side-bar {
   background-color: #0f172a;
   /* hide text that overflows when collapsed */
   overflow: hidden;
+  /* border-radius: 0 12px 12px 0; */
+  margin-right: 10px;
   transition:
     width 0.35s ease,
     padding 0.35s ease;
 }
+
 /* When SideBar is in Collapsed State */
 #side-bar.collapsed {
   /* just enough for icons */
-  width: 52px;
+  width: 72px;
   padding: 16px 8px;
 }
+
 /* Hide text labels when collapsed */
 #side-bar.collapsed span {
-  opacity: 0; /* invisible */
+  /*opacity: 0;  invisible */
+  display: none;
   pointer-events: none; /* not clickable */
   transition: opacity 0.2s;
+}
+
+#side-bar.collapsed li{
+   width: 36px;
 }
 /* Show text when open */
 #side-bar span {
@@ -59,6 +68,7 @@ aside#side-bar {
   white-space: nowrap; /* prevent text wrapping during animation */
   transition: opacity 0.2s;
 }
+
 /* for Pixel Grid */
 div.pixel-grid {
   display: flex;
@@ -67,10 +77,12 @@ div.pixel-grid {
   gap: 10px;
   padding: 20px 0px 20px 10px;
 }
+
 div.pixel-grid h3 {
   color: white;
   font-size: 20px;
 }
+
 /* for Pixel Grid Icon */
 div.pixel-grid .pixel-grid-icon {
   width: 38px;
@@ -80,6 +92,7 @@ div.pixel-grid .pixel-grid-icon {
   justify-content: center;
   align-items: center;
   border-radius: 11px;
+  flex-shrink: 0;
 }
 
 div.pixel-grid i {
@@ -149,10 +162,11 @@ nav#navbar {
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.1);
+  /* backdrop-filter: blur(10px); */
+  /* background-color: rgba(15, 23, 42, 0.6); */
   /* background-color: rgba(15, 23, 42, 0.7); */
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.171);
+  /* border-radius: 12px; */
+  border-bottom: 0.5px solid rgba(119, 2, 100, 0.171);
 }
 /* for Left Side
 & Right Side */
@@ -165,6 +179,7 @@ nav#navbar div.nav-right-side {
 }
 /* for Div Icons */
 button.list-icon,
+button.toggle-btn,
 div.magnifying-glass-icon,
 div.notification-icon,
 div.profile-icon {
@@ -180,6 +195,7 @@ div.profile-icon {
 }
 /* for hover */
 button.list-icon:hover,
+button.toggle-btn:hover,
 div.magnifying-glass-icon:hover,
 div.notification-icon:hover,
 div.profile-icon:hover {
@@ -188,11 +204,16 @@ div.profile-icon:hover {
 }
 /* for icons */
 button.list-icon i,
+button.toggle-btn i,
 div.magnifying-glass-icon i,
 div.notification-icon i,
 div.profile-icon i {
   font-size: 20px;
   color: rgb(168, 167, 167);
+}
+/* for Toggle */
+body.active{
+  background-color:#182c5c;
 }
 /* for Dashboard heading */
 div.dashboard-heading h2 {
@@ -201,11 +222,9 @@ div.dashboard-heading h2 {
 }
 /* for Content Area */
 div.content-area {
-  grid-row: 2 / 6;
+  grid-row: 2 / 3;
   grid-column: 2 / 3;
-
   padding: 20px;
-
   display: grid;
   grid-template-rows: 350px 200px auto auto;
   gap: 20px;
@@ -294,11 +313,12 @@ section#stat-cards .stats-card {
         rgb(29, 139, 212)
       )
       border-box;
-  /* background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08); */
+  /* background: var(--bg-card); */
+  border: 1px solid rgba(255, 255, 255, 0.08);
   /* border: 2px solid transparent; */
   border-radius: 12px;
   height: 150px;
+  box-shadow: 0 4px 8px rgba(15, 14, 14, 0.2);
   transition: all 0.3s ease-in-out;
 }
 
@@ -371,8 +391,9 @@ section.img-cards .image-card:hover {
 section.img-cards .image-card > div:first-child {
   height: 180px;
   width: 100%;
+  background-color: #1e293b; 
 }
-/* for Image 1, Image 2 and Image 3 */
+/* for Image 1,2,3,4,5 & 6 */
 div.image-card div.img1 {
   background: url("./assets/img1.jpg") no-repeat center center/cover;
 }
@@ -382,18 +403,35 @@ div.image-card div.img2 {
 div.image-card div.img3 {
   background: url("./assets/img3.avif") no-repeat center center/cover;
 }
+div.image-card div.img4 {
+  background: url("./assets/img4.jpg") no-repeat center center/cover;
+}
+div.image-card div.img5 {
+  background: url("./assets/img5.jpg") no-repeat center center/cover;
+}
+div.image-card div.img6 {
+  background: url("./assets/img6.jpg") no-repeat center center/cover;
+}
+
 /* for Image Hover Effect in Image Card */
 .image-card .img1,
 .image-card .img2,
-.image-card .img3 {
+.image-card .img3,
+.image-card .img4,
+.image-card .img5,
+.image-card .img6 {
   transition: transform 0.4s ease;
 }
 
 .image-card:hover .img1,
 .image-card:hover .img2,
-.image-card:hover .img3 {
+.image-card:hover .img3,
+.image-card:hover .img4,
+.image-card:hover .img5,
+.image-card:hover .img6 {
   transform: scale(1.05);
 }
+
 /* for Card Body in Image Card */
 section.img-cards .image-card .card-body {
   padding: 10px;
@@ -467,8 +505,16 @@ button.download-btn {
   cursor: pointer;
 }
 
-/* Active class */
-.active {
-  transform: translateX(0);
-  transition: transform 0.3s ease-in-out;
+/* for Footer */
+footer {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  text-align: center;
+  padding: 15px;
+  background-color: #12327c;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.171);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.171);
+  border-radius: 0 0 12px 12px;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.014);
 }

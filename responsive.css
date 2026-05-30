@@ -1,0 +1,67 @@
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE STYLES
+   ========================================== */
+
+@media screen and (max-width: 992px) {
+  /* Change the main container grid to a single column */
+  div.container {
+    grid-template-columns: 1fr; /* Sidebar drops out of the main grid columns */
+    grid-template-rows: 75px auto auto auto; /* Add an extra auto row for a mobile footer/sidebar */
+  }
+
+  /* Reposition layout pieces so they don't overlap */
+  header,
+  main,
+  footer {
+    grid-column: 1 / 2; /* Take up the full width of the screen */
+  }
+
+  /* Deal with the sidebar */
+  aside#side-bar {
+    left: -250px; /* Hide it off the left side of the screen by default */
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 1000; /* Put it on top of everything else */
+    transition: left 0.3s ease;
+    border-radius: 0;
+  }
+
+  /* When your JS toggles the sidebar on mobile, it slides out into view! */
+  aside#side-bar.collapsed {
+    left: 0;
+  }
+
+  /* Make the main workspace content flow naturally vertically */
+  div.content-area {
+    grid-template-rows: auto; /* Let content dictate height naturally */
+    gap: 15px;
+    padding: 15px;
+  }
+
+  /* Shrink down the massive banner heading on smaller screens */
+  div.header h1 {
+    font-size: 32px;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Turn 3 columns of stats into 1 stacked column */
+  section#stat-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* If 150px height is too small for stacked stats text, let it be flexible */
+  section#stat-cards .stats-card {
+    height: auto;
+    min-height: 120px;
+  }
+
+  /* Turn 3 columns of image cards into 1 stacked column */
+  section.img-cards {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
