@@ -1,18 +1,18 @@
 // Select Toggle Button
-const toggleBtn1 = document.getElementById('toggle-btn');
-// Select Navbar
-const navbar = document.getElementById('navbar');
+const toggleSidebarBtn = document.getElementById('toggle-btn');
 // Select toggle Mode
-const toggleBtn2 = document.querySelector('.toggle-btn');
+const toggleThemeBtn = document.querySelector('.toggle-btn');
 // Select Body
-let body = document.querySelector("body");
-if (toggleBtn1) {
+const bodyElement = document.body;
+if (toggleSidebarBtn) {
     // Add Click Event Listener to Toggle Button
-    toggleBtn1.addEventListener('click', toggleSidebar);
+    toggleSidebarBtn.addEventListener('click', toggleSidebar);
 }
 function toggleSidebar() {
     const sidebar = document.getElementById("side-bar");
     const icon = document.querySelector("#toggle-btn i");
+    
+    if (!sidebar || !icon) return; 
     
     sidebar.classList.toggle("collapsed");
     
@@ -29,9 +29,9 @@ function toggleSidebar() {
 const toggleMode = () => {
     const icon = document.querySelector(".toggle-btn i");
 
-    body.classList.toggle('active');
+    bodyElement.classList.toggle('active');
     
-    if (body.classList.contains('active')) {
+    if (bodyElement.classList.contains('active')) {
         // toggleBtn2.innerHTML = '🌙';
         icon.className = "ti ti-moon-stars";
     } else {
@@ -39,10 +39,10 @@ const toggleMode = () => {
         icon.className = "ti ti-sun-high";
     }
 }
-if (toggleBtn2) {
-    toggleBtn2.addEventListener("click", toggleMode);
-}
 
+if (toggleThemeBtn) {
+    toggleThemeBtn.addEventListener("click", toggleMode);
+}
 // const toggle = () => {
 //     let mode = "light";
 
