@@ -269,6 +269,7 @@ div.header {
   color: white;
   text-align: center;
 }
+
 /* for Heading header */
 div.header h1 {
   font-size: 48px;
@@ -283,6 +284,20 @@ div.header h1 {
   );
   background: linear-gradient(to right, #818cf8, #22d3ee);
   color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* for Animation */
+.header h1 > span {
+  display: inline-block;
+  background: linear-gradient(
+    to right,
+    rgb(255, 0, 0),
+    blue,
+    rgba(7, 198, 231, 0.671),
+    rgb(223, 6, 223)
+  );
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -509,8 +524,9 @@ div.card-footer .tag-urban {
 div.card-footer .tag-travel {
   background-color: #a3769dc2;
   color: #690648;
-  div.card-footer .tag-beach {
 }
+
+div.card-footer .tag-beach {
   background-color: #678bbbc2;
   color: #042a64;
 }
