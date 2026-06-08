@@ -335,6 +335,8 @@ section#stat-cards {
 
 /* for Individual Stat Card */
 section#stat-cards .stats-card {
+  position: relative;
+  /* isolation: isolate; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -350,7 +352,7 @@ section#stat-cards .stats-card {
       )
       border-box; */
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* border: 1px solid rgba(255, 255, 255, 0.08); */
   /* border: 2px solid transparent; */
   border-radius: 12px;
   height: 150px;
@@ -361,12 +363,46 @@ section#stat-cards .stats-card {
 /* for hovering on Card */
 section#stat-cards .stats-card:hover {
   transform: translateY(-7px);
-  /* border-color: rgba(28, 31, 216, 0.5);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15); */
   border-color: rgba(99, 102, 241, 0.5);
-
+  background: var(--bg-card);
   box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
   cursor: pointer;
+}
+
+@property --deg {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.stats-card::before,
+.stats-card::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: conic-gradient(
+    from var(--deg) at center,
+    #00c3ff,
+    #4d0199,
+    #6300c6,
+    #00c3ff
+  );
+  border-radius: inherit;
+  z-index: -1;
+  animation: autoRotate 2s linear infinite;
+}
+
+.stats-card::after {
+  filter: blur(10px);
+}
+
+@keyframes autoRotate {
+  to {
+    --deg: 360deg;
+  }
 }
 
 .stats-card h3 {
