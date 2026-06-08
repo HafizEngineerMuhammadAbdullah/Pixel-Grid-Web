@@ -4,16 +4,22 @@ const splitText = () => {
 
     const headingContent = h1.textContent;
 
-    let half = headingContent.length / 2;
+    let half = Math.floor(headingContent.length / 2);
 
     let word = "";
 
     headingContent.split("").forEach((char, idx) => {
 
+        const content = char === " " ? "&nbsp;" : char;
+
         if (idx < half) {
-            word += `<span class='left-half'>${char}</span>`;
+            // word += `<span class='left-half'>${char}</span>`;
+            word += `<span class='left-half'>${content}</span>`;
+            console.log(word);
+            
         } else {
-            word += `<span class='right-half'>${char}</span>`;
+            // word += `<span class='right-half'>${char}</span>`;
+            word += `<span class='right-half'>${content}</span>`;
         }
     });
 

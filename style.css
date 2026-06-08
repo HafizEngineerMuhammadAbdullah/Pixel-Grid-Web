@@ -300,6 +300,7 @@ div.header h1 {
   );
   -webkit-background-clip: text;
   background-clip: text;
+   white-space: pre;
 }
 /* for Paragraph header */
 div.header p {
